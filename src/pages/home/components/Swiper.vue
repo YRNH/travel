@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="showSwiper">
             <!-- slides -->
             <swiper-slide v-for="item of swiperList" :key="item.id">
                 <img :src="item.imgUrl" alt="">
@@ -14,6 +14,9 @@
 <script>
     export default {
         name: "HomeSwiper",
+        props:{
+            list: Array
+        },
         data (){
             return{
                 swiperOption:{
@@ -30,6 +33,11 @@
                         imgUrl:'http://img1.qunarzz.com/piao/fusion/1812/48/5713e2a2ba72f902.jpg_750x200_2b382dac.jpg'
                     }
                 ]
+            }
+        },
+        computed:{
+            showSwiper (){
+                return this.list.length;
             }
         }
     }
