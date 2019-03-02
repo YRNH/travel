@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="showIcon">
             <swiper-slide v-for="(page, index) of pages" :key="index">
                 <div
                         class="icon"
@@ -32,6 +32,9 @@
             }
         },
         computed:{
+            showIcon (){
+                return this.list.length;
+            },
             pages (){
                 const pages = [];
                 this.list.forEach((item,index)=>{
@@ -48,8 +51,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '~@/assets/styles/varibles.scss';
-    @import '~@/assets/styles/mixins.scss';
+    @import '~styles/varibles.scss';
+    @import '~styles/mixins.scss';
     .icons /deep/ .swiper-container{
         height: 0;
         padding-bottom: 50%

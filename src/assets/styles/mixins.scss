@@ -3,3 +3,13 @@
   text-overflow:ellipsis;
   white-space:nowrap;
 }
+//多行溢出
+ @mixin many-ellipsis(){
+  display:flex;
+  overflow:hidden;
+   -ms-text-overflow: ellipsis;
+   text-overflow: ellipsis;
+   word-break:break-all;
+   -webkit-box-orient: vertical;
+   -webkit-line-camp:2;
+}
