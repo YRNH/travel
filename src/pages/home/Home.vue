@@ -57,11 +57,15 @@
             this.lastCity = this.city;
             this.getHomeInfo()
         },
+        //当使用keep-alive的时候，会多出activated生命周期函数
         activated (){
             if(this.lastCity !== this.city){
                 this.lastCity = this.city;
                 this.getHomeInfo();
             }
+        },
+        beforeDestroy(){
+            console.log(1111);
         }
     }
 </script>

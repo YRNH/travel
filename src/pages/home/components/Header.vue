@@ -6,6 +6,7 @@
         <div class="header-input"><span class="iconfont">&#xe632;</span>输入城市/景点/游玩主题</div>
         <router-link to='/city'>
             <div class="header-right">
+                <!--{{this.$store.state.city}}-->
                 {{this.city}}
                 <span class="iconfont arrow-icon">&#xe64a;</span>
             </div>
@@ -19,6 +20,7 @@
         name: "HomeHeader",
         computed:{
             ...mapState(['city'])
+            //把mapstate的city值映射到computed，这里相当于 computed.city = this.$store.city
         }
     }
 </script>

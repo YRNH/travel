@@ -63,7 +63,7 @@
             .item-desc{
                 line-height: .4rem;
                 color: #ccc;
-                //@include  ellipsis()
+                @include  ellipsis()
             }
             .item-button{
                 line-height: .44rem;
@@ -72,6 +72,9 @@
                 padding: 0 .2rem;
                 border-radius: .06rem;
                 color: #fff;
+                position: absolute;
+                left: 2rem;
+                bottom: 0.1rem;
             }
         }
 
