@@ -44,8 +44,17 @@
                 }
             }
         },
+        mounted () {
+            window.addEventListener('scroll', this.handleScroll)
+        },
+        unmounted () {
+            window.removeEventListener('scroll', this.handleScroll)
+        },
         activated (){
             window.addEventListener('scroll',this.handleScroll)
+        },
+        deactivated (){
+            window.removeEventListener('scroll',this.handleScroll)
         }
     }
 </script>
